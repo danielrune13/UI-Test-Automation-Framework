@@ -1,0 +1,4 @@
+jiraUrl: @jira.url@
+user:
+  username: @jira.username@
+  password: @jira.password@
