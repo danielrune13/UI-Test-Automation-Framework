@@ -1,4 +1,4 @@
-package org.hashiro.maven.domain;
+package org.uiframework.com.domain;
 
 import lombok.Data;
 

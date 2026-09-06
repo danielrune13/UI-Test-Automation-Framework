@@ -1,4 +1,4 @@
-package org.hashiro.maven.locators;
+package org.uiframework.com.locators;
 
 import org.openqa.selenium.By;
 

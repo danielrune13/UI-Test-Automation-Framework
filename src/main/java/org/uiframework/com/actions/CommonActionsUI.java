@@ -1,19 +1,19 @@
-package org.hashiro.maven.actions;
+package org.uiframework.com.actions;
 
-import lombok.AllArgsConstructor;
+import io.cucumber.spring.ScenarioScope;
 import lombok.extern.slf4j.Slf4j;
-import org.hashiro.maven.configuration.TestConfig;
-import org.hashiro.maven.domain.User;
-import org.hashiro.maven.domain.UserType;
-import org.hashiro.maven.utils.Wait;
+import org.uiframework.com.configuration.TestConfig;
+import org.uiframework.com.domain.User;
+import org.uiframework.com.domain.UserType;
+import org.uiframework.com.utils.Wait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static org.hashiro.maven.locators.LoginPage.*;
+import static org.uiframework.com.locators.LoginPage.*;
 
 @Component
-@AllArgsConstructor
 @Slf4j
+@ScenarioScope
 public class CommonActionsUI extends BasePage {
 
     @Autowired

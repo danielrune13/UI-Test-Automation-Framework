@@ -1,4 +1,4 @@
-package org.hashiro.maven.actions;
+package org.uiframework.com.actions;
 
 import lombok.extern.slf4j.Slf4j;
 import net.serenitybdd.core.pages.PageObject;

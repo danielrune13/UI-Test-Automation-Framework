@@ -1,4 +1,4 @@
-package org.hashiro.maven.domain;
+package org.uiframework.com.domain;
 
 public enum UserType {
     STANDARD_USER("Standard User"),
@@ -25,6 +25,6 @@ public enum UserType {
                 return b;
             }
         }
-        return null;
+        throw new IllegalArgumentException("No user of type " + text + " available");
     }
 }
