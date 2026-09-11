@@ -1,5 +1,6 @@
 package org.uiframework.com.configuration;
 
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import lombok.Data;
 import org.uiframework.com.domain.User;
 import org.uiframework.com.domain.UserType;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties
+@EnableEncryptableProperties
 @Data
 public class TestConfig {
     private String url;
