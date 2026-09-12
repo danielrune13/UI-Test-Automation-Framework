@@ -21,11 +21,16 @@ Feature: Login Feature
       | Visual User             |
 
   @Login-02
+  Scenario: Login with locked user
+    When user logs in as "Locked out User"
+    Then an error message is provided to the user
+
+  @Login-03
   Scenario: Login with invalid credentials
     When user logs in with invalid credentials
     Then an error message is provided to the user
 
-  @Login-03
+  @Login-04
   Scenario: Logout
     Given user is logged-in as "Standard User"
     When user logs out
