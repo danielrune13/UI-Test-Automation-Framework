@@ -1,0 +1,9 @@
+# This script can be used to execute the tests and register the results in Xray in a previously existent Test Execution.
+# PARAMETERS:
+#   -Dspring.profiles.active                           [Mandatory]                    This parameter determines in which testing environment the tests are executed.
+#   -Djasypt.encryptor.password=${ENCRYPTION_PASSWORD} [Mandatory]                    This parameter details the encrypt/decrypt password of the project properties. The $ENCRYPTION_PASSWORD variable should be set before executing this script. For instance, export $ENCRYPTION_PASSWORD=my_encryption_password.
+#   -Denvironment                                      [Mandatory]                    This parameter determines from which environment the tests should be executed. Possible Values: local, grid-firefox and grid-chrome. The tests can be executed on the local machine by setting the -Denvironment=local
+#   -Dcucumber.filter.tags                             [Optional]                     Tag/s used to restrict the execution to the scenarios with those tags. See https://cucumber.io/docs/cucumber/api/?lang=java for further information. Example: -Dcucumber.filter.tags='@Regression'
+#   -Dcucumber.execution.parallel.enabled              [Optional]                     Tag/s used to enable/disable the parallel execution. Possible values: true/false. See https://github.com/cucumber/cucumber-jvm/blob/main/cucumber-junit-platform-engine/README.md#configuration-options for the complete list of available options. Example: -Dcucumber.execution.parallel.enabled=true
+
+mvn clean verify -Dcucumber.filter.tags="@Regression" -Djasypt.encryptor.password=${ENCRYPTION_PASSWORD} -Denvironment=chrome -Dspring.profiles.active=test
