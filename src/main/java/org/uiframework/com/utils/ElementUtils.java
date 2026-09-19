@@ -5,6 +5,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 public class ElementUtils {
+    private ElementUtils() {
+        throw new UnsupportedOperationException("This is an utility class and cannot be instantiaded");
+    }
+    
     public static void click(WebElement element) {
         JavascriptExecutor executor = (JavascriptExecutor) Serenity.getDriver();
         executor.executeScript("arguments[0].click();", element);

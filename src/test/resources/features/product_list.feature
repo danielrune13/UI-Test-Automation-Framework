@@ -31,7 +31,7 @@ Feature: Product List Feature
     When user selects a product using its "<product_element>"
     Then user is redirected to "Product Details" page
     And the following product information is provided
-      | Name | Price | Add to cart |
+      | Name | Image | Description | Price | Add to cart |
     Examples:
       | product_element |
       | product title   |

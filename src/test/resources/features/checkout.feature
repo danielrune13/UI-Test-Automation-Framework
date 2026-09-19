@@ -13,7 +13,7 @@ Feature: Checkout Feature
   @Checkout-01
   Scenario: Start checkout
     Given user is in "Cart" page
-    When user selects "Checkout"
+    When user starts the checkout
     Then user is redirected to "Checkout: Your Information" page
     And the following information is requested by the system
       | First Name | Last Name | Zip/Postal Code |
@@ -28,12 +28,12 @@ Feature: Checkout Feature
   Scenario Outline: Checkout without providing "<personal_information>"
     Given user has started the checkout process
     When user submits checkout information without providing "<personal_information>"
-    Then an error message is provided to the user
+    Then user is presented with the message "<message>"
     Examples:
-      | personal_information |
-      | First Name           |
-      | Last Name            |
-      | Zip/Postal Code      |
+      | personal_information | message                 |
+      | First Name           | First Name is required  |
+      | Last Name            | Last Name is required   |
+      | Zip/Postal Code      | Postal Code is required |
 
   @Checkout-04
   Scenario: Submit personal information
@@ -57,18 +57,18 @@ Feature: Checkout Feature
     And cart icon does not display a quantity
     And the message "Your order has been dispatched" is provided
     And the following options are available
-      | Back Home | Generate PDF Order | Shipping Information | Total Price |
+      | Back Home | Generate PDF Order |
 
   @Checkout-07
   Scenario: Return home after completing checkout
     Given user is in "Checkout: Complete!" page
-    When user selects "Back Home"
+    When user selects to return back to home
     Then user is redirected to "Product List" page
 
   @Checkout-08
   Scenario: Generate PDF order confirmation
     Given user is in "Checkout: Complete!" page
-    When user selects "Generate PDF Order"
+    When user selects to generate the PDF Order
     Then a PDF document is downloaded
     And the document contains the following information
       | Order Date | Shipping Address | Items | Price |

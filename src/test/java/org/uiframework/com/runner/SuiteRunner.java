@@ -1,4 +1,4 @@
-package org.uiframework.com.runners;
+package org.uiframework.com.runner;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;

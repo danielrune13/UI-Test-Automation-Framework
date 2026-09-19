@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class TestConfig {
     private String url;
     private Users users;
+    private CheckoutConfig dataInputCheckout;
 
     @Data
     public static class Users {
@@ -34,5 +35,12 @@ public class TestConfig {
                 case VISUAL_USER -> visualUser;
             };
         }
+    }
+
+    @Data
+    public static class CheckoutConfig {
+        private String firstName;
+        private String lastName;
+        private String postalCode;
     }
 }

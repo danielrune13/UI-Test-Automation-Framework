@@ -1,0 +1,27 @@
+# This environment is just for display and the url does not exist.
+
+url: https://www.preprod.saucedemo.com/
+users:
+  standardUser:
+    username: ENC(uVr1ha7yN8HYf+JNt/qJ1TsLtQtj8+9yzVEG6rjp6btIhNzxfvSn9qBFIyPI8/j5)
+    password: ENC(spQVnTiddGiZviBV5pp+Di+R6Jqbl6WwhOG33EavBIHODL0SbXEATkR4yVni6AdN)
+  lockedOutUser:
+    username: ENC(HH1SWyFo438Tcza0+5xQgRDE+39T6Z2qBzwneGee3vSFJPrF1u5B2vam1uh+z9nY)
+    password: ENC(0aetPjLLzEBOkM/B6JaMTgOIOvPL9C87T19Mutq3V2iXlAGd17EGjk+x1yT6hmqH)
+  problemUser:
+    username: ENC(O1mBqouiKPYNOSIFuOSeG94c6XI/qLUXEqNbaM5cFZHQUHpHPz42TkgR8Pb6YPVN)
+    password: ENC(jfRvtyP8oQxquhgiaiun8czvR767nbAwhVnUjG4/yUoHVHGL9zYgb/F/3A1eT4IW)
+  performanceGlitchUser:
+    username: ENC(BQsFTp9cgb9/7AbXh9TbMS6irUQ3roO/skULh5HbPYQrm3eRDNpqjvVQYIrtxt6cgKZQm+L2rvmypCoFrUuW0A==)
+    password: ENC(sue0WLRKI95bimk18w7JRT4bRutgDRebBiSORwCG4MSZTL1/S1g4iTKZaJCQPqjx)
+  errorUser:
+    username: ENC(TC8Gn9Si9dFfwFaku2aIBhn+NsMzouIfgrMdtbuKX8+viz3j/1uZ8ruVx7YBI++p)
+    password: ENC(QsbjHsYRFbD1InQ3awgWOUOOQn+NuTFEQvGCYf122BEnnxe8IWyW5yTJQaT5p8s2)
+  visualUser:
+    username: ENC(Y0UZfO38z7Bn1earoQQk8qy2fUzW0Cka66qHMQ47VXUmSVlEnL4quTtXUEi1nz4B)
+    password: ENC(SYgH+0ZCOdxlUNbuIaLzou9oBACUeewwV6mH4l1U8IUdgaziQtzx0wz02DRspcEI)
+
+dataInputCheckout:
+  firstName: Test First Name
+  lastName: Test Last Name
+  postalCode: 12345

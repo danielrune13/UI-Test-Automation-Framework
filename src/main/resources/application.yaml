@@ -1,3 +1,0 @@
-spring:
-  config:
-    import: classpath:swag-labs-config/application-${spring.profiles.active}.yaml

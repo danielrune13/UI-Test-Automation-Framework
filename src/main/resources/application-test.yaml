@@ -18,3 +18,8 @@ users:
   visualUser:
     username: ENC(Y0UZfO38z7Bn1earoQQk8qy2fUzW0Cka66qHMQ47VXUmSVlEnL4quTtXUEi1nz4B)
     password: ENC(SYgH+0ZCOdxlUNbuIaLzou9oBACUeewwV6mH4l1U8IUdgaziQtzx0wz02DRspcEI)
+
+dataInputCheckout:
+  firstName: Test First Name
+  lastName: Test Last Name
+  postalCode: 12345

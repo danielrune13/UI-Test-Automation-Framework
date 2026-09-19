@@ -28,7 +28,7 @@ Feature: Cart Feature
     And user is in "Cart" page
     When user removes a product from the cart
     Then product is removed from the cart
-    And cart quantity is decreased by 1
+    And cart icon quantity is decreased by 1
 
   @Cart-04
   Scenario: Remove all products from cart
@@ -42,5 +42,5 @@ Feature: Cart Feature
   Scenario: Cart - Continue shopping
     Given user has added some products to the cart
     And user is in "Cart" page
-    When user selects "Continue Shopping"
+    When user selects to continue shopping
     Then user is redirected to "Product List" page

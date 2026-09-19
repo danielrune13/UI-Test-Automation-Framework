@@ -5,6 +5,10 @@ import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 
 public class WindowUtils {
+    private WindowUtils() {
+        throw new UnsupportedOperationException("This is an utility class and cannot be instantiaded");
+    }
+    
     public static void switchToWindowByIndex(int index) {
         WebDriver driver = Serenity.getDriver();
         Object[] windowHandles = driver.getWindowHandles().toArray();
@@ -19,7 +23,7 @@ public class WindowUtils {
         for (String windowHandle : driver.getWindowHandles()) {
             driver.switchTo().window(windowHandle);
             String windowTitle = driver.getTitle();
-            if (windowTitle.contains(title)) {
+            if (windowTitle != null && windowTitle.contains(title)) {
                 windowFound = true;
                 break;
             }
