@@ -1,4 +1,4 @@
-# This script can be used to execute the tests and register the results in Xray in a previously existent Test Execution.
+# This script can be used to execute the tests.
 # PARAMETERS:
 #   -Dspring.profiles.active                           [Mandatory]                    This parameter determines in which testing environment the tests are executed.
 #   -Djasypt.encryptor.password=${ENCRYPTION_PASSWORD} [Mandatory]                    This parameter details the encrypt/decrypt password of the project properties. The $ENCRYPTION_PASSWORD variable should be set before executing this script. For instance, export $ENCRYPTION_PASSWORD=my_encryption_password.
