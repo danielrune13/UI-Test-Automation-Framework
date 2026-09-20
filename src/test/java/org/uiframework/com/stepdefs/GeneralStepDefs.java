@@ -1,12 +1,16 @@
 package org.uiframework.com.stepdefs;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
+import net.serenitybdd.core.Serenity;
 import org.uiframework.com.domain.Page;
 import org.uiframework.com.domain.UserType;
+import org.uiframework.com.utils.AllureUtils;
 
 import java.io.IOException;
 
@@ -15,10 +19,21 @@ import static org.uiframework.com.domain.Page.*;
 @Slf4j
 public class GeneralStepDefs extends ConfigStepDefinition {
 
+    @Before
+    public void setup() throws IOException {
+        AllureUtils.createEnvironmentFile();
+    }
+
     @After
     public void clean() throws IOException {
         commonActions.deleteDownloadedFiles();
         scenarioContext.cleanCart();
+    }
+
+    @After
+    public void addFailureInformation(Scenario scenario) {
+        if (scenario.isFailed())
+            AllureUtils.addFailureInformation();
     }
 
     @Given("user has opened the application")

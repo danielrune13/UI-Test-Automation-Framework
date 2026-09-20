@@ -1,6 +1,7 @@
 package org.uiframework.com.actions;
 
 import io.cucumber.spring.ScenarioScope;
+import io.qameta.allure.Allure;
 import lombok.extern.slf4j.Slf4j;
 import org.uiframework.com.configuration.TestConfig;
 import org.uiframework.com.domain.User;
@@ -38,6 +39,7 @@ public class CommonActions extends BasePage {
         $(USERNAME_INPUT).type(user.getUsername());
         $(PASSWORD_INPUT).type(user.getPassword());
         $(LOGIN_BUTTON).click();
+        Allure.attachment("Username", user.getUsername());
     }
 
     public void loginWithInvalidCredentials() {

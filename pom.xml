@@ -30,6 +30,7 @@
         <lombok.version>1.18.46</lombok.version>
         <pdfbox.version>3.0.7</pdfbox.version>
         <jcraft.version>2.27.7</jcraft.version>
+        <allure.version>2.35.3</allure.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +80,13 @@
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
                 <version>${json.org.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-bom</artifactId>
+                <version>${allure.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -177,6 +185,10 @@
             <artifactId>jsch</artifactId>
             <version>${jcraft.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -216,20 +228,6 @@
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-maven-plugin</artifactId>
                 <version>${jasypt.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>${serenity.bdd.version}</version>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
