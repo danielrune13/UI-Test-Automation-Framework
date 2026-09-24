@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
-                bat 'mvn clean verify -Dcucumber.filter.tags="%tags%" -Djasypt.encryptor.password=$ENCRYPTION_PASSWORD -Denvironment=%browser_environment% -Dspring.profiles.active=%application_environment%'
+                bat 'mvn clean verify -Dcucumber.filter.tags="%tags%" -Djasypt.encryptor.password=%ENCRYPTION_PASSWORD% -Denvironment=%browser_environment% -Dspring.profiles.active=%application_environment%'
             }
         }
     }
