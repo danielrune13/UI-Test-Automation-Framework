@@ -10,12 +10,22 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
-                if (isUnix()) {
-                    sh 'mvn clean verify -Dcucumber.filter.tags="${tags}" -Djasypt.encryptor.password=$ENCRYPTION_PASSWORD -Denvironment=${browser_environment} -Dspring.profiles.active=${application_environment}'
-                } else {
-                    bat 'mvn clean verify -Dcucumber.filter.tags="%tags%" -Djasypt.encryptor.password=%ENCRYPTION_PASSWORD% -Denvironment=%browser_environment% -Dspring.profiles.active=%application_environment%'
+                script {
+                    if (isUnix()) {
+                        sh 'mvn clean verify -Dcucumber.filter.tags="${tags}" -Djasypt.encryptor.password=$ENCRYPTION_PASSWORD -Denvironment=${browser_environment} -Dspring.profiles.active=${application_environment}'
+                    } else {
+                        bat 'mvn clean verify -Dcucumber.filter.tags="%tags%" -Djasypt.encryptor.password=%ENCRYPTION_PASSWORD% -Denvironment=%browser_environment% -Dspring.profiles.active=%application_environment%'
+                    }
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            allure([
+                path: 'target/allure-results'
+            ])
         }
     }
 }
