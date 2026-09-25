@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+
     parameters {
         string(name: 'tags', defaultValue: '@Regression', description: 'Cucumber tags to execute (Eg. @Login)')
         choice(name: 'browser_environment', choices: ['chrome', 'firefox', 'edge'], description: 'Browser environment where tests will be executed')
